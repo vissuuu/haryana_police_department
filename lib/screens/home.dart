@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-// ignore: camel_case_types
+import '../ui_helper/widgets/round_btn_1.dart';
+
+// ignore: camel_case_types, must_be_immutable
 class home extends StatelessWidget{
+  // ignore: prefer_typing_uninitialized_variables
   var name;
 
-  home(this.name);
+  home(this.name, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class home extends StatelessWidget{
               leading: const Icon(Icons.supervised_user_circle,
                 size: 60,
               color: Colors.white,),
-              title: Text(name, style: TextStyle(color: Colors.white),),
+              title: Text(name, style: const TextStyle(color: Colors.white),),
               subtitle: Text("ACP", style: TextStyle(color: Colors.white),),
               trailing: const Icon(Icons.notifications_active_outlined,
               size: 25,
@@ -259,7 +262,68 @@ class home extends StatelessWidget{
                           ),
                         ),
                       ), // Leave Balance Box
+                      Row(
+                        children: [
+                          Flexible(
+                            child: Padding (
+                              padding: const EdgeInsets.only(left: 25,right: 25),
+                              child: SizedBox(
+                                height: 50,
+                                child: Column(
+                                  children:   [
+                                    Flexible(
+                                        flex: 4,
+                                        fit: FlexFit.tight,
+                                        child:
+                                        // Container(
+                                        //   color: Colors.red,
+                                        // )
+                                        InkWell(
+                                          onTap: (){
 
+                                          },
+                                          child: const rdn_button(
+                                            BtnName: "Continue",
+                                            // link: 'Navigator.push(context, MaterialPageRoute(builder: (context) => change_password(),))'
+                                          ),
+                                        )
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                            child: Padding (
+                              padding: const EdgeInsets.only(left: 25,right: 25),
+                              child: SizedBox(
+                                height: 50,
+                                child: Column(
+                                  children:   [
+                                    Flexible(
+                                        flex: 4,
+                                        fit: FlexFit.tight,
+                                        child:
+                                        // Container(
+                                        //   color: Colors.red,
+                                        // )
+                                        InkWell(
+                                          onTap: (){
+
+                                          },
+                                          child: const rdn_button(
+                                            BtnName: "Continue",
+                                            // link: 'Navigator.push(context, MaterialPageRoute(builder: (context) => change_password(),))'
+                                          ),
+                                        )
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),

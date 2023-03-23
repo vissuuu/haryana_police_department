@@ -25,9 +25,13 @@ class _SplashState extends State<splash> {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
-    body: Container(
-      color: Colors.orange,
-        child: Center(child: Image.asset("assets/images/HP_logo.png", height: 100,),)),
+    body: Image.asset(
+      "assets/images/splash_screen.jpg",
+      fit: BoxFit.cover,
+      height: double.infinity,
+      width: double.infinity,
+      alignment: Alignment.center,
+    ),
   );
   }
 }
