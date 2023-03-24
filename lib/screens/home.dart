@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:haryana_police_department/screens/to_approve.dart';
+import 'package:haryana_police_department/screens/your_leaves.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../ui_helper/widgets/round_btn_1.dart';
@@ -280,10 +282,10 @@ class home extends StatelessWidget{
                                         // )
                                         InkWell(
                                           onTap: (){
-
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => const your_leaves(),));
                                           },
                                           child: const rdn_button(
-                                            BtnName: "Continue",
+                                            BtnName: "Apply Leave",
                                             // link: 'Navigator.push(context, MaterialPageRoute(builder: (context) => change_password(),))'
                                           ),
                                         )
@@ -309,10 +311,10 @@ class home extends StatelessWidget{
                                         // )
                                         InkWell(
                                           onTap: (){
-
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => const to_approve(),));
                                           },
                                           child: const rdn_button(
-                                            BtnName: "Continue",
+                                            BtnName: "Approve Leave",
                                             // link: 'Navigator.push(context, MaterialPageRoute(builder: (context) => change_password(),))'
                                           ),
                                         )
