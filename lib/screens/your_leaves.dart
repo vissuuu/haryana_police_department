@@ -3,8 +3,17 @@ import 'package:haryana_police_department/screens/to_approve.dart';
 
 
 // ignore: camel_case_types
-class your_leaves extends StatelessWidget {
+class your_leaves extends StatefulWidget {
   const your_leaves({super.key});
+
+  @override
+  State<your_leaves> createState() => _your_leavesState();
+}
+
+// ignore: camel_case_types
+class _your_leavesState extends State<your_leaves> {
+  var status = "all";
+
   @override
   Widget build(BuildContext context) {
   return Scaffold(
@@ -29,20 +38,20 @@ class your_leaves extends StatelessWidget {
               width: 10,
             ),
             Container(
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      colors: [
-                        Color(0xFF2F3374),
-                        Color(0xFF682242)
-                      ]
-                  ),
-                borderRadius: BorderRadius.circular(5)
-              ),
-              child: const Icon(Icons.add_outlined, size: 30, color: Colors.white,)
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        colors: [
+                          Color(0xFF2F3374),
+                          Color(0xFF682242)
+                        ]
+                    ),
+                    borderRadius: BorderRadius.circular(5)
+                ),
+                child: const Icon(Icons.add_outlined, size: 30, color: Colors.white,)
             ),
             const SizedBox(
               width: 10,
@@ -76,37 +85,37 @@ class your_leaves extends StatelessWidget {
                         decoration: BoxDecoration(
                           // color: Colors.black,
                             color: Color(0xFFF3F3F3),
-                          borderRadius: BorderRadius.circular(20)
+                            borderRadius: BorderRadius.circular(20)
                         ),
                         child: Row(
                           children: [
                             Flexible(
                                 child: Padding(
-                                  padding: const EdgeInsets.all(4),
-                                  child: SizedBox(
-                                    height: 38,
-                                    child: Column(
-                                      children: [
-                                        Flexible(
-                                          fit: FlexFit.tight,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(20),
-                                                gradient: const LinearGradient(
+                                    padding: const EdgeInsets.all(4),
+                                    child: SizedBox(
+                                      height: 38,
+                                      child: Column(
+                                        children: [
+                                          Flexible(
+                                              fit: FlexFit.tight,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  borderRadius: BorderRadius.circular(20),
+                                                  gradient: const LinearGradient(
                                                     begin: Alignment.bottomLeft,
                                                     end: Alignment.topRight,
                                                     colors: [
                                                       Color(0xFF2F3374),
                                                       Color(0xFF682242)
                                                     ],
+                                                  ),
                                                 ),
-                                              ),
-                                              child: const Center(child: Text("Yours", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: Colors.white),)),
-                                            )
-                                        )
-                                      ],
-                                    ),
-                                )
+                                                child: const Center(child: Text("Yours", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: Colors.white),)),
+                                              )
+                                          )
+                                        ],
+                                      ),
+                                    )
                                 )
                             ),
                             Flexible(
@@ -160,65 +169,17 @@ class your_leaves extends StatelessWidget {
                       Container(
                         decoration: BoxDecoration(
                           // color: Colors.black,
-                            color: Color(0xFFF3F3F3),
+                            color: const Color(0xFFF3F3F3),
                             borderRadius: BorderRadius.circular(20)
                         ),
                         child: Row(
                           children: [
                             Flexible(
-                                child: Padding(
-                                    padding: const EdgeInsets.all(4),
-                                    child: SizedBox(
-                                      height: 38,
-                                      child: Column(
-                                        children: [
-                                          Flexible(
-                                              fit: FlexFit.tight,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(20),
-                                                  gradient: const LinearGradient(
-                                                    begin: Alignment.bottomLeft,
-                                                    end: Alignment.topRight,
-                                                    colors: [
-                                                      Color(0xFF2F3374),
-                                                      Color(0xFF682242)
-                                                    ],
-                                                  ),
-                                                ),
-                                                child: const Center(child: Text("All", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: Colors.white),)),
-                                              )
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                )
-                            ),
-                            Flexible(
-                                child: Padding(
-                                    padding: const EdgeInsets.all(4),
-                                    child: SizedBox(
-                                      height: 38,
-                                      child: Column(
-                                        children: [
-                                          Flexible(
-                                              fit: FlexFit.tight,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(20),
-                                                ),
-                                                child: const Center(child: Text("Casual", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)),
-                                              )
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                )
-                            ),
-                            Flexible(
                                 child: InkWell(
                                   onTap: (){
-
+                                    setState(() {
+                                      status = "all";
+                                    });
                                   },
                                   child: Padding(
                                       padding: const EdgeInsets.all(4),
@@ -231,8 +192,88 @@ class your_leaves extends StatelessWidget {
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                     borderRadius: BorderRadius.circular(20),
+                                                    gradient: status == "all"? const LinearGradient(
+                                                      begin: Alignment.bottomLeft,
+                                                      end: Alignment.topRight,
+                                                      colors: [
+                                                        Color(0xFF2F3374),
+                                                        Color(0xFF682242)
+                                                      ],
+                                                    ) : const LinearGradient(colors: [Color(0xFFF3F3F3),Color(0xFFF3F3F3)]),
                                                   ),
-                                                  child: const Center(child: Text("Sick", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)),
+                                                  child: Center(child: Text("All", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: status == "all"? Colors.white:Colors.black),)),
+                                                )
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                  ),
+                                )
+                            ),
+                            Flexible(
+                                child: InkWell(
+                                  onTap: (){
+                                    setState(() {
+                                      status = "casual";
+                                    });
+                                  },
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: SizedBox(
+                                        height: 38,
+                                        child: Column(
+                                          children: [
+                                            Flexible(
+                                                fit: FlexFit.tight,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(20),
+                                                    gradient: status == "casual"? const LinearGradient(
+                                                      begin: Alignment.bottomLeft,
+                                                      end: Alignment.topRight,
+                                                      colors: [
+                                                        Color(0xFF2F3374),
+                                                        Color(0xFF682242)
+                                                      ],
+                                                    ) : const LinearGradient(colors: [Color(0xFFF3F3F3),Color(0xFFF3F3F3)]),
+                                                  ),
+                                                  child: Center(child: Text("Casual", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: status == "casual"? Colors.white:Colors.black),)),
+                                                )
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                  ),
+                                )
+                            ),
+                            Flexible(
+                                child: InkWell(
+                                  onTap: (){
+                                    setState(() {
+                                      status = "sick";
+                                    });
+                                  },
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: SizedBox(
+                                        height: 38,
+                                        child: Column(
+                                          children: [
+                                            Flexible(
+                                                fit: FlexFit.tight,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(20),
+                                                    gradient: status == "sick"? const LinearGradient(
+                                                      begin: Alignment.bottomLeft,
+                                                      end: Alignment.topRight,
+                                                      colors: [
+                                                        Color(0xFF2F3374),
+                                                        Color(0xFF682242)
+                                                      ],
+                                                    ) : const LinearGradient(colors: [Color(0xFFF3F3F3),Color(0xFFF3F3F3)]),
+                                                  ),
+                                                  child: Center(child: Text("Sick", style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: status == "sick"? Colors.white:Colors.black),)),
                                                 )
                                             )
                                           ],
@@ -250,7 +291,10 @@ class your_leaves extends StatelessWidget {
             ),
           ),
         ), // All-Casual-Sick navigation
-        
+        const SizedBox(
+          height: 20,
+        ),
+
       ],
     ),
   );
