@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:haryana_police_department/screens/change_password.dart';
 import 'package:haryana_police_department/screens/landing.dart';
 import 'package:haryana_police_department/screens/splash_screen.dart';
-import 'package:haryana_police_department/screens/your_leaves.dart';
 
 void main() {
   runApp(const MyApp());
