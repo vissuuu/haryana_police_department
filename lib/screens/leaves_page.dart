@@ -184,16 +184,13 @@ class leavesState extends State<leaves_page> {
           Flexible(
             child: Padding (
               padding: const EdgeInsets.only(left: 25,right: 25),
-              child: SizedBox(
-                height: 40,
-                child: Column(
-                  children:   [
-                    Flexible(
-                        fit: FlexFit.tight,
-                        child: page == "your"?your_leave():to_approve()
-                    ),
-                  ],
-                ),
+              child: Column(
+                children:   [
+                  Flexible(
+                      fit: FlexFit.tight,
+                      child: page == "your"?your_leave():to_approve()
+                  ),
+                ],
               ),
             ),
           ),
